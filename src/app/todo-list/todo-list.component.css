@@ -1,0 +1,40 @@
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+mat-card {
+  width: 500px;
+  margin: 1.5rem;
+}
+
+.empty-list {
+  color: gray;
+  text-align: center;
+  padding: 1rem;
+}
+
+.selected {
+  border: 2px solid darkblue;
+}
+
+.item-card {
+  cursor: pointer;
+}
+
+.item-card:hover {
+  background-color: rgb(245, 245, 245);
+  -webkit-box-shadow: 5px 5px 15px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.3);
+}

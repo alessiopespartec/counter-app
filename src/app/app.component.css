@@ -1,0 +1,7 @@
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  height: 100%;
+  padding-top: 3rem;
+}

@@ -1,0 +1,50 @@
+<mat-card>
+  <mat-card-content class="center">
+    <div class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>Oggetto</mat-label>
+        <input
+          matInput
+          [(ngModel)]="newTodo"
+          maxlength="100"
+          placeholder="Scrivi qui..."
+          (keyup.enter)="addToList()"
+        />
+        <mat-hint align="end">{{ newTodo.length }} / 100</mat-hint>
+      </mat-form-field>
+    </div>
+
+    <button
+      mat-icon-button
+      aria-label="Example icon button with a vertical three dot icon"
+      (click)="addToList()"
+    >
+      <mat-icon>add</mat-icon>
+    </button>
+  </mat-card-content>
+</mat-card>
+
+<hr />
+
+<div *ngIf="todos.length == 0">
+  <p class="empty-list">La lista è vuota</p>
+</div>
+
+<mat-card
+  *ngFor="let todo of todos; let i = index"
+  (click)="selectItem(i)"
+  [class.selected]="selectedItems.includes(i)"
+  class="item-card"
+>
+  <mat-card-content class="center">
+    {{ i + 1 + ". " + todo.charAt(0).toUpperCase() + todo.slice(1) }}
+    <button
+      color="warn"
+      mat-mini-fab
+      aria-label="Delete"
+      (click)="deleteItem(i)"
+    >
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-card-content>
+</mat-card>
